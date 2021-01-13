@@ -1,0 +1,205 @@
+var obj = {name : 'RajiniKanth', age : 33, hasPets : false};//PART1
+ function printAllValues(obj) {
+return Object.values(obj);
+ }
+ console.log(printAllValues(obj));
+ 
+var objj = {name : 'RajiniKanth', age : 33, hasPets : false};//PART2
+  function printAllkeys(objj) {
+ return Object.keys(objj);
+ }
+ console.log(printAllkeys(objj));
+ 
+var object = {name: 'ISRO', age: 35, role: 'Scientist'};//PART3
+ function convertListToObject(obj){
+return Object.entries(obj)
+}
+console.log(convertListToObject(object));
+
+var arry = ["GUVI", 'I', 'am', 'Geek'];//PART4
+function transformFirstAndLast(arry)
+ {
+ var newObject={};
+let key=arry[0]
+let value=arry[arry.length-1];
+newObject[key]=value;
+return newObject;
+}
+console.log(transformFirstAndLast(arry));
+
+ 
+ var arr = [['make', 'Ford'], ['model', 'Mustang'], ['year', 1964]];//PART5
+function fromListToObject(arr) 
+ {
+var newObject = {};
+for (i=0;i<arr.length;i++)
+{
+ let key = arr[i][0];
+  let value = arr[i][1];
+  newObject[key] = value;
+}
+return newObject;
+}
+console.log(fromListToObject(arr));
+
+//PART6
+    var array = [
+  [
+     ['firstName', 'Vasanth'],
+      ['lastName', 'Raja'], 
+     ['age', 24], 
+      ['role', 'JSWizard']
+     ], 
+     [
+       ['firstName', 'Sri'], 
+        ['lastName', 'Devi'], 
+        ['age', 28], 
+        ['role', 'Coder']
+      ]
+    ];
+  function transformEmployeeData(arr) 
+{
+ var tranformEmployeeList = [];
+  for (var i= 0; i<arr.length; i++)
+{
+ let newObject = {};	
+ for (var j= 0; j<arr[i].length; j++)
+ {
+ let key = arr[i][j][0];
+ let value = arr[i][j][1];
+          newObject[key] = value;	
+        }
+        tranformEmployeeList.push(newObject);
+      }
+      return tranformEmployeeList;
+    }
+
+    console.log(transformEmployeeData(array));
+                  
+var expected = {foo: 5, bar: 6};//PART7
+var expected1 = {foo: 6, bar: 5};
+var actual = {foo: 5, bar: 6};
+function assertObjectsEqual(actual, expected, testName)
+{
+actualStr = JSON.stringify(actual);
+expectedStr = JSON.stringify(expected);
+if(actualStr === expectedStr)
+{
+return "Passed";
+} else
+{
+return "FAILED ["+testName+"] Expected "+actualStr+", but got "+expectedStr;
+ }
+ }
+console.log(assertObjectsEqual(actual, expected, 'test1'))
+console.log(assertObjectsEqual(actual, expected1, 'test2'))
+
+var securityQuestions = [ //PART8
+{
+question: 'What was your first pet’s name?',
+expectedAnswer: 'FlufferNutter'
+},
+{
+ question: 'What was the model year of your first car?',
+ expectedAnswer: '1985'
+},
+{
+question: 'What city were you born in?',
+ expectedAnswer: 'NYC'
+}
+    ];
+function chksecurityQuestions(securityQuestions,question, answer)
+{ 
+ for (var i = 0; i < securityQuestions.length; i++)
+  {
+ for (keys in securityQuestions[i])
+ {
+if(keys == "question")
+{
+if(securityQuestions[i].question == question && 
+      securityQuestions[i].expectedAnswer == answer)
+{
+return true;
+}
+}
+}
+}
+return false; 
+}
+var ques = 'What was your first pet’s name?';
+var ans  =  'FlufferNutter';
+var status = chksecurityQuestions(securityQuestions, ques, ans);
+console.log(status);
+var ques = 'What was your first pet’s name?';
+var ans  =  'DufferNutter';
+var status = chksecurityQuestions(securityQuestions, ques, ans);
+console.log(status); 
+
+
+
+  var students = [     //PART9
+    {
+      name: 'Siddharth Abhimanyu', 
+      age: 21
+    }, 
+    { 
+      name: 'Malar', 
+      age: 25
+    },
+    {
+      name: 'Maari',
+      age: 18
+    },
+    {
+      name: 'Bhallala Deva',
+      age: 17
+    },
+    {
+      name: 'Baahubali',
+      age: 16
+    },
+    {
+        name: 'AAK chandran',
+        age: 23
+    },
+    {
+      name:'Gabbar Singh',
+      age: 33
+    },
+    {
+      name: 'Mogambo',
+      age: 53
+    },
+    {
+      name: 'Munnabhai',
+      age: 40
+    },
+    {
+      name: 'Sher Khan',
+      age: 20
+    },
+    {
+      name: 'Chulbul Pandey'
+      ,age: 19
+    },
+    {
+      name: 'Anthony',
+      age: 28
+    },
+    {
+      name: 'Devdas',
+      age: 56
+    } 
+  ];
+  function returnMinors(arr)
+  {
+    var newObj = [];
+    for (var i = 0; i< arr.length; i++){
+      if (arr[i].age < 20){
+        newObj.push(arr[i]);
+      }
+    }
+    return newObj;
+  }
+  console.log(returnMinors(students));
+                  
